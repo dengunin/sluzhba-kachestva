@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Служба качества</title>
+<link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  // тема — до отрисовки, без мигания: сохранённая (светлая / тёмная) или как в системе
+  try { var t = localStorage.getItem("sk-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+</head>
+<body>
+<div id="login" class="login" hidden>
+  <form class="login-card" id="login-form" autocomplete="off">
+    <img class="logo-light" src="assets/logo.png" alt="Система-Сервис">
+    <img class="logo-dark" src="assets/logo-dark.png" alt="Система-Сервис">
+    <h1>Служба качества</h1>
+    <p>Испытания, замечания и готовность комплектов по распоряжениям.</p>
+    <label for="password">Пароль</label>
+    <input class="input" id="password" type="password" autocomplete="current-password" required>
+    <button class="btn primary" type="submit" id="login-btn">Войти</button>
+    <div class="login-msg" id="login-msg" role="alert" hidden></div>
+  </form>
+</div>
+
+<div id="app" class="app" hidden>
+  <header class="header">
+    <button class="btn ghost icon menu-btn" id="menu-btn" type="button" aria-label="Меню" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <a class="brand" href="#/" aria-label="Обзор">
+      <img class="logo-light" src="assets/logo.png" alt="Система-Сервис">
+      <img class="logo-dark" src="assets/logo-dark.png" alt="Система-Сервис">
+      <span>Служба качества</span>
+    </a>
+    <div class="spacer"></div>
+    <span class="stamp" id="stamp"></span>
+    <button class="btn ghost refresh" id="refresh-btn" type="button" title="Загрузить сводку заново">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg>
+      <span>Обновить</span>
+    </button>
+    <button class="btn ghost icon" id="theme-btn" type="button" aria-label="Тема"></button>
+    <button class="btn ghost" id="logout-btn" type="button">Выйти</button>
+  </header>
+  <div class="subbar" id="subbar" hidden></div>
+  <div class="layout">
+    <nav class="nav" id="nav" aria-label="Разделы"></nav>
+    <div class="scrim" id="scrim"></div>
+    <main class="main" id="main" tabindex="-1"></main>
+  </div>
+</div>
+<div id="panel-root"></div>
+<script src="assets/app.js"></script>
+</body>
+</html>
