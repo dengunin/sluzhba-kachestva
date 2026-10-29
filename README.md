@@ -1,1 +1,1 @@
-# quality_service_v1
+# sluzhba-kachestva
